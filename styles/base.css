@@ -52,6 +52,7 @@ nav a {
   text-decoration: none;
   padding: 0.4rem 0.7rem;
   border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -61,11 +62,40 @@ nav a:hover {
 }
 
 /* -----------------------------
+   Dashboard (Full Width Buttons)
+------------------------------ */
+
+.dashboard {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+
+.dashboard a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dashboard a:hover {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+/* -----------------------------
    Main Layout
 ------------------------------ */
 
 main {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -77,13 +107,23 @@ main h1 {
 }
 
 /* -----------------------------
-   Cards Grid
+   Cards Grid Layout
+------------------------------ */
+
+.cards {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* -----------------------------
+   Card Styling
 ------------------------------ */
 
 .card {
   background-color: #fff;
   padding: 1.5rem;
-  margin-bottom: 2rem;
   border-radius: 8px;
   display: grid;
   gap: 1rem;
@@ -95,11 +135,54 @@ main h1 {
   color: var(--primary-color);
 }
 
+.card h3 {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 1rem;
+  color: var(--primary-color);
+}
+
 .card img {
   width: 100%;
   max-width: 400px;
   justify-self: center;
   border-radius: 6px;
+}
+
+/* -----------------------------
+   Location Section
+------------------------------ */
+
+.location {
+  display: grid;
+  gap: 1rem;
+}
+
+.location img {
+  max-width: 120px;
+  justify-self: start;
+}
+
+/* -----------------------------
+   Web Development Resources
+------------------------------ */
+
+.resource-list {
+  padding-left: 1.2rem;
+}
+
+.resource-list li {
+  margin-bottom: 0.9rem;
+  line-height: 1.5;
+}
+
+.resource-list a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.resource-list a:hover {
+  text-decoration: underline;
 }
 
 /* -----------------------------
@@ -116,4 +199,19 @@ footer {
 footer p {
   margin: 0.3rem 0;
   font-size: 0.9rem;
+}
+
+/* -----------------------------
+   Responsive Design
+------------------------------ */
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }

@@ -1,91 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 131 – Dynamic Web Fundamentals by Ongom Ronald.">
+    <meta name="author" content="Ongom Ronald">
+    <title>WDD 131 – Dynamic Web Fundamentals – Ongom Ronald</title>
 
-  <meta
-    name="description"
-    content="WDD 131 – Dynamic Web Fundamentals by Ongom Ronald. HTML, CSS, JavaScript, responsive design, and dynamic web development."
-  >
-  <meta name="author" content="Ongom Ronald">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
 
-  <title>WDD 131 | Dynamic Web Fundamentals | Ongom Ronald</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap"
-    rel="stylesheet"
-  >
+        header {
+            background-color: #2c5d7d;
+            color: white;
+            padding: 1rem 0;
+        }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles/base.css">
+        #course-title {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
 
-  <!-- JavaScript -->
-  <script src="scripts/getdates.js" defer></script>
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        h1 {
+            font-weight: 400;
+            margin: 2rem 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card h2 {
+            background-color: #2c5d7d;
+            color: white;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        /* Profile Area Layout */
+        .profile-area {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .bio-text {
+            flex: 1;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        /* Lira City Section - Falls after profile */
+        .location-info {
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .location-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .flag-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .flag-img {
+            width: 100px;
+            border: 1px solid #eee;
+        }
+
+        footer {
+            background-color: #2c5d7d;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        #lastModified {
+            color: #ffff00;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+    </style>
+    <script src="scripts/getdates.js" defer></script>
 </head>
 
 <body>
 
-  <header>
-    <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
-
+<header>
+    <span id="course-title">WDD 131: Dynamic Web Fundamentals</span>
     <nav>
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://byupw.instructure.com/" target="_blank" rel="noopener">Canvas</a>
-      <a
-        href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7"
-        target="_blank"
-        rel="noopener"
-      >
-        Favorite Scripture
-      </a>
-      <a href="project/">Final Project</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://byupw.instructure.com/" target="_blank">I-Learn</a>
+        <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank">Scripture</a>
+        <a href="project/">Final Project</a>
     </nav>
-  </header>
+</header>
 
-  <main>
+<main>
     <h1>Ongom Ronald</h1>
 
-    <section class="card">
-      <h2>About Me</h2>
+    <div class="cards-container">
+        <!-- ABOUT ME CARD -->
+        <section class="card">
+            <h2>About Me</h2>
+            <div class="card-content">
+                
+                <!-- Profile details first -->
+                <div class="profile-area">
+                    <div class="bio-text">
+                        <p>My name is Ongom Ronald, a software engineering enthusiast from Lira City in Northern Uganda. I have a strong interest in building practical, user-focused digital solutions that improve efficiency and accessibility.</p>
+                    </div>
+                    <img src="images/profile.jpg" alt="Ongom Ronald" class="profile-img">
+                </div>
+                
+                <!-- Lira City section follows profile -->
+                <div class="location-info">
+                    <div class="location-title">Lira City, Northern Uganda</div>
+                    <div class="flag-box">
+                        <img src="images/uganda-flag.png" alt="Flag of Uganda" class="flag-img">
+                        <p>Lira City is one of the major urban centers in Northern Uganda and serves as a regional hub for education, commerce, and technology.</p>
+                    </div>
+                </div>
 
-      <img
-        src="images/profile.jpg"
-        alt="Portrait of Ongom Ronald, aspiring software engineer from Northern Uganda"
-      >
+            </div>
+        </section>
 
-      <p>
-        My name is Ongom Ronald from Lira City, Northern Uganda. I am an aspiring
-        software engineer with a passion for building efficient, accessible,
-        and dynamic web applications using modern web technologies.
-      </p>
-    </section>
+        <!-- RESOURCES CARD -->
+        <section class="card">
+            <h2>Web Dev Resources</h2>
+            <div class="card-content">
+                <ul style="line-height: 2;">
+                    <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
+                    <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+                    <li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
+                    <li><a href="https://github.com/">GitHub</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</main>
 
-    <section class="card">
-      <h2>Career & Interests</h2>
-
-      <img
-        src="images/software.jpg"
-        alt="Illustration representing software development and programming"
-      >
-
-      <p>
-        I am focused on software engineering, system troubleshooting, and
-        full-stack web development. I enjoy solving real-world problems using
-        HTML, CSS, JavaScript, and networking fundamentals.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p>
-      &copy; <span id="currentyear"></span> Ongom Ronald | Northern Uganda
-    </p>
-    <p id="lastModified"></p>
-  </footer>
+<footer>
+    <p>&copy; <span id="currentyear"></span> 🌸 Ongom Ronald 🌸 Northern Uganda</p>
+    <p id="lastModified">Last Modification: 05/13/2026 18:39:35</p>
+</footer>
 
 </body>
 </html>
