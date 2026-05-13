@@ -1,0 +1,119 @@
+/* -----------------------------
+   Global Styles
+------------------------------ */
+
+:root {
+  --primary-color: #1f3c88;
+  --secondary-color: #f4f6fb;
+  --accent-color: #ffb703;
+  --text-color: #222;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+/* -----------------------------
+   Header & Navigation
+------------------------------ */
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem;
+}
+
+#course-title {
+  display: block;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+/* -----------------------------
+   Main Layout
+------------------------------ */
+
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+main h1 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 2rem;
+}
+
+/* -----------------------------
+   Cards Grid
+------------------------------ */
+
+.card {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  display: grid;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--primary-color);
+}
+
+.card img {
+  width: 100%;
+  max-width: 400px;
+  justify-self: center;
+  border-radius: 6px;
+}
+
+/* -----------------------------
+   Footer
+------------------------------ */
+
+footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
