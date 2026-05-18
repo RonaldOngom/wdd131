@@ -1,0 +1,154 @@
+/* --- RESET & ROOT VARIABLES --- */
+:root {
+    --primary-color: #003366;    /* Deep Blue - High Contrast */
+    --secondary-color: #f4f6f9;  /* Off-White / Light Grey */
+    --accent-color: #d4af37;     /* Soft Gold */
+    --text-dark: #1a1a1a;        /* High Contrast Charcoal text */
+    --text-light: #ffffff;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Hamburger button styling using pure CSS characters for zero bloat */
+#menuButton {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+#menuButton::before {
+    content: "\2630"; /* Hamburger icon character */
+}
+
+#menuButton.open::before {
+    content: "\2715"; /* 'X' Close icon character */
+}
+
+/* Mobile Navigation (Hidden by default, flex layout when active) */
+nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+nav.open {
+    display: flex;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.75rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+}
+
+/* --- MAIN CONTENT & GRID --- */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+main h2 {
+    font-family: var(--font-heading);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Responsive Single-Column Grid for Mobile View */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+figure {
+    background-color: var(--secondary-color);
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+figure:hover {
+    transform: translateY(-4px);
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+figcaption {
+    padding: 1rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.4rem 0;
+}

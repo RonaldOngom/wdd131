@@ -1,0 +1,37 @@
+/* --- DESKTOP VIEWS (>= 32rem / 512px) --- */
+
+header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+header h1 {
+    margin-bottom: 0;
+}
+
+/* Hide hamburger button layout on large screens */
+#menuButton {
+    display: none;
+}
+
+/* Desktop horizontal flex alignment for navigation links */
+nav {
+    display: flex !important; /* Force displays layout over js state changes */
+    flex-direction: row;
+    width: auto;
+    margin-top: 0;
+}
+
+nav a {
+    border-bottom: none;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+}
+
+/* Dynamic Multi-column Responsive Layout using auto-fit and minmax */
+.gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
