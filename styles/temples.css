@@ -1,5 +1,5 @@
-/* --- RESET & ROOT VARIABLES --- */
-:root {
+/* --- PAGE-SCOPED RESET & ROOT VARIABLES --- */
+body.temples-page {
     --primary-color: #003366;    /* Deep Blue - High Contrast */
     --secondary-color: #f4f6f9;  /* Off-White / Light Grey */
     --accent-color: #d4af37;     /* Soft Gold */
@@ -7,23 +7,19 @@
     --text-light: #ffffff;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     font-family: var(--font-body);
     color: var(--text-dark);
     background-color: #ffffff;
     line-height: 1.6;
 }
 
-/* --- HEADER & NAVIGATION --- */
-header {
+.temples-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.temples-page header {
     background-color: var(--primary-color);
     color: var(--text-light);
     padding: 1rem;
@@ -33,14 +29,14 @@ header {
     align-items: center;
 }
 
-header h1 {
+.temples-page header h1 {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
 }
 
 /* Hamburger button styling using pure CSS characters for zero bloat */
-#menuButton {
+.temples-page #menuButton {
     background: none;
     border: none;
     color: var(--text-light);
@@ -51,16 +47,16 @@ header h1 {
     top: 1rem;
 }
 
-#menuButton::before {
+.temples-page #menuButton::before {
     content: "\2630"; /* Hamburger icon character */
 }
 
-#menuButton.open::before {
+.temples-page #menuButton.open::before {
     content: "\2715"; /* 'X' Close icon character */
 }
 
 /* Mobile Navigation (Hidden by default, flex layout when active) */
-nav {
+.temples-page nav {
     display: none;
     width: 100%;
     flex-direction: column;
@@ -68,11 +64,11 @@ nav {
     margin-top: 1rem;
 }
 
-nav.open {
+.temples-page nav.open {
     display: flex;
 }
 
-nav a {
+.temples-page nav a {
     color: var(--text-light);
     text-decoration: none;
     padding: 0.75rem;
@@ -82,19 +78,20 @@ nav a {
     transition: background-color 0.3s, color 0.3s;
 }
 
-nav a:hover, nav a.active {
+.temples-page nav a:hover,
+.temples-page nav a.active {
     background-color: var(--accent-color);
     color: var(--text-dark);
 }
 
 /* --- MAIN CONTENT & GRID --- */
-main {
+.temples-page main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1.5rem 1rem;
 }
 
-main h2 {
+.temples-page main h2 {
     font-family: var(--font-heading);
     text-align: center;
     margin-bottom: 1.5rem;
@@ -102,13 +99,13 @@ main h2 {
 }
 
 /* Responsive Single-Column Grid for Mobile View */
-.gallery-grid {
+.temples-page .gallery-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
-figure {
+.temples-page figure {
     background-color: var(--secondary-color);
     border: 1px solid #e0e0e0;
     border-radius: 4px;
@@ -120,18 +117,18 @@ figure {
     transition: transform 0.3s ease;
 }
 
-figure:hover {
+.temples-page figure:hover {
     transform: translateY(-4px);
 }
 
-figure img {
+.temples-page figure img {
     width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
 }
 
-figcaption {
+.temples-page figcaption {
     padding: 1rem;
     font-weight: 600;
     font-family: var(--font-heading);
@@ -140,7 +137,7 @@ figcaption {
 }
 
 /* --- FOOTER --- */
-footer {
+.temples-page footer {
     background-color: var(--primary-color);
     color: var(--text-light);
     text-align: center;
@@ -149,6 +146,42 @@ footer {
     font-size: 0.9rem;
 }
 
-footer p {
+.temples-page footer p {
     margin: 0.4rem 0;
 }
+
+@media screen and (min-width: 32rem) {
+    .temples-page header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    .temples-page header h1 {
+        margin-bottom: 0;
+    }
+
+    .temples-page #menuButton {
+        display: none;
+    }
+
+    .temples-page nav {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        margin-top: 0;
+    }
+
+    .temples-page nav a {
+        border-bottom: none;
+        margin-left: 0.5rem;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+    }
+
+    .temples-page .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+}
+
