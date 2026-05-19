@@ -8,7 +8,7 @@ body.temples-page {
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
     font-family: var(--font-body);
-    color: var(--text-dark);
+    color: #1a1a1a;
     background-color: #ffffff;
     line-height: 1.6;
 }
