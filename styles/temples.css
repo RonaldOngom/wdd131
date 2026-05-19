@@ -21,7 +21,7 @@ body.temples-page {
 
 .temples-page header {
     background-color: var(--primary-color);
-    color: var(--text-light);
+    color: #ffffff;
     padding: 1rem;
     position: relative;
     display: flex;
@@ -39,7 +39,7 @@ body.temples-page {
 .temples-page #menuButton {
     background: none;
     border: none;
-    color: var(--text-light);
+    color: #ffffff;
     font-size: 2rem;
     cursor: pointer;
     position: absolute;
@@ -69,7 +69,7 @@ body.temples-page {
 }
 
 .temples-page nav a {
-    color: var(--text-light);
+    color: #ffffff;
     text-decoration: none;
     padding: 0.75rem;
     font-weight: 600;
@@ -81,7 +81,7 @@ body.temples-page {
 .temples-page nav a:hover,
 .temples-page nav a.active {
     background-color: var(--accent-color);
-    color: var(--text-dark);
+    color: #1a1a1a;
 }
 
 /* --- MAIN CONTENT & GRID --- */
@@ -95,7 +95,7 @@ body.temples-page {
     font-family: var(--font-heading);
     text-align: center;
     margin-bottom: 1.5rem;
-    color: var(--primary-color);
+    color: #003366;
 }
 
 /* Responsive Single-Column Grid for Mobile View */
@@ -132,14 +132,14 @@ body.temples-page {
     padding: 1rem;
     font-weight: 600;
     font-family: var(--font-heading);
-    color: var(--primary-color);
+    color: #003366;
     text-align: center;
 }
 
 /* --- FOOTER --- */
 .temples-page footer {
     background-color: var(--primary-color);
-    color: var(--text-light);
+    color: #ffffff;
     text-align: center;
     padding: 1.5rem 1rem;
     margin-top: 2rem;
