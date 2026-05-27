@@ -1,0 +1,189 @@
+/* --- Global CSS Variables --- */
+:root {
+    --primary-color: #000000;      /* Sleek deep black background elements */
+    --accent-yellow: #FFC72C;     /* Vibrant gold accent color */
+    --accent-red: #D80027;        /* Crisp crimson red highlighting */
+    --bg-light: #F9FBF9;          /* High-contrast soft background */
+    --text-dark: #1A1A1A;         /* Dark text reading tone */
+    --text-light: #FFFFFF;        /* Bright text contrast mask */
+    --card-bg: #FFFFFF;           /* Card background surface */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+}
+
+/* --- Base Formats & Typography --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header System --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--accent-yellow);
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 5px solid var(--accent-red);
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header .tagline {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
+/* --- Layout Grid/Flex --- */
+main {
+    max-width: 1100px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    flex-grow: 1;
+}
+
+/* --- Hero Image Handling --- */
+.hero-container {
+    width: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    height: 250px;
+}
+
+.hero-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Data Cards Structure --- */
+.data-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border-top: 4px solid var(--primary-color);
+}
+
+.factors-card {
+    border-top-color: var(--accent-yellow);
+}
+
+.weather-card {
+    border-top-color: var(--accent-red);
+    position: relative;
+}
+
+.data-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #EEEEEE;
+    color: var(--primary-color);
+}
+
+.data-list {
+    list-style: none;
+}
+
+.data-list li {
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+}
+
+.data-list li strong {
+    color: #444444;
+}
+
+/* --- Mobile Weather Layout Specifics --- */
+.mobile-weather-icon {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Hide desktop pseudo-element footprint on small views */
+.weather-heading::after {
+    content: "";
+    display: none;
+}
+
+/* --- Footer Frame --- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 4px solid var(--accent-yellow);
+}
+
+footer p {
+    margin: 0.3rem 0;
+}
+
+footer .last-modified {
+    color: var(--accent-yellow);
+}
+
+/* --- Responsive Media Queries (Wider View >= 768px) --- */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+    }
+
+    .hero-container {
+        grid-column: 1 / -1;
+        height: 400px;
+    }
+
+    /* Reposition Weather card side by side with details data block */
+    .factors-card {
+        grid-column: 1 / 2;
+    }
+
+    .weather-card {
+        grid-column: 2 / 3;
+    }
+
+    /* Hide the Mobile SVG wrapper completely */
+    .mobile-weather-icon {
+        display: none;
+    }
+
+    /* Activate the requested CSS Pseudo-Element Emoticon layout */
+    .weather-heading::after {
+        display: inline-block;
+        content: " ⛅";
+        font-size: 1.4rem;
+        margin-left: 8px;
+        vertical-align: middle;
+    }
+}
