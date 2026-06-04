@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Enhanced Temple Picture Album with filtering and lazy loading">
+  <meta name="author" content="Ronald Ongom">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Filtered Temples</title>
   <link rel="stylesheet" href="styles/filtered-temples.css">
+  <script defer src="scripts/filtered-temples.js"></script>
 </head>
 <body>
   <header>
-    <h1>Temple Picture Album</h1>
+    <h1>Temple Album</h1>
     <nav>
-      <button id="home">Home</button>
-      <button id="old">Old</button>
-      <button id="new">New</button>
-      <button id="large">Large</button>
-      <button id="small">Small</button>
+      <a id="home" href="#">Home</a>
+      <a id="old" href="#">Old</a>
+      <a id="new" href="#">New</a>
+      <a id="large" href="#">Large</a>
+      <a id="small" href="#">Small</a>
     </nav>
   </header>
 
@@ -26,7 +28,5 @@
   <footer>
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
-
-  <script src="scripts/filtered-temples.js"></script>
 </body>
 </html>
