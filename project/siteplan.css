@@ -1,0 +1,23 @@
+/* Apply Color Scheme and Typography */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #2c3e50; /* Primary Color */
+}
+
+a {
+    color: #e74c3c; /* Accent Color */
+}
+
+/* Basic styling for rubric compliance */
+section {
+    margin-bottom: 30px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
