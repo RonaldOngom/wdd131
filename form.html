@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Ongom Ronald">
+  <meta name="description" content="Product review form for submitting feedback on products with rating, comments, and contact information.">
   <title>Product Review Form</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/form.js" defer></script>
@@ -33,11 +35,11 @@
       <legend>Overall Rating <span class="required">*</span></legend>
 
       <div class="rating">
-        <label><input type="radio" name="rating" value="1" required> ☆</label>
-        <label><input type="radio" name="rating" value="2"> ☆☆</label>
-        <label><input type="radio" name="rating" value="3"> ☆☆☆</label>
-        <label><input type="radio" name="rating" value="4"> ☆☆☆☆</label>
-        <label><input type="radio" name="rating" value="5"> ☆☆☆☆☆</label>
+        <label for="rating1"><input type="radio" id="rating1" name="rating" value="1" required> ☆</label>
+        <label for="rating2"><input type="radio" id="rating2" name="rating" value="2" required> ☆☆</label>
+        <label for="rating3"><input type="radio" id="rating3" name="rating" value="3" required> ☆☆☆</label>
+        <label for="rating4"><input type="radio" id="rating4" name="rating" value="4" required> ☆☆☆☆</label>
+        <label for="rating5"><input type="radio" id="rating5" name="rating" value="5" required> ☆☆☆☆☆</label>
       </div>
     </fieldset>
 
@@ -50,10 +52,10 @@
     <!-- Useful Features -->
     <fieldset>
       <legend>Useful Features</legend>
-      <label><input type="checkbox" name="features" value="ease"> Ease of Use</label>
-      <label><input type="checkbox" name="features" value="performance"> Performance</label>
-      <label><input type="checkbox" name="features" value="design"> Design</label>
-      <label><input type="checkbox" name="features" value="support"> Customer Support</label>
+      <label for="ease"><input type="checkbox" id="ease" name="features" value="ease"> Ease of Use</label>
+      <label for="performance"><input type="checkbox" id="performance" name="features" value="performance"> Performance</label>
+      <label for="design"><input type="checkbox" id="design" name="features" value="design"> Design</label>
+      <label for="support"><input type="checkbox" id="support" name="features" value="support"> Customer Support</label>
     </fieldset>
 
     <!-- Written Review -->
