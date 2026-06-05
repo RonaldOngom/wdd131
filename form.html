@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Review Form</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/form.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Product Review</h1>
+</header>
+
+<main>
+  <form method="get" action="review.html">
+    
+    <!-- Product Name -->
+    <fieldset>
+      <legend>Product Information</legend>
+
+      <label for="product">
+        Product Name <span class="required">*</span>
+      </label>
+      <select id="product" name="product" required>
+        <option value="" disabled selected>Select a Product ...</option>
+      </select>
+    </fieldset>
+
+    <!-- Overall Rating -->
+    <fieldset>
+      <legend>Overall Rating <span class="required">*</span></legend>
+
+      <div class="rating">
+        <label><input type="radio" name="rating" value="1" required> ☆</label>
+        <label><input type="radio" name="rating" value="2"> ☆☆</label>
+        <label><input type="radio" name="rating" value="3"> ☆☆☆</label>
+        <label><input type="radio" name="rating" value="4"> ☆☆☆☆</label>
+        <label><input type="radio" name="rating" value="5"> ☆☆☆☆☆</label>
+      </div>
+    </fieldset>
+
+    <!-- Date Installed -->
+    <label for="installDate">
+      Date of Installation <span class="required">*</span>
+    </label>
+    <input type="date" id="installDate" name="installDate" required>
+
+    <!-- Useful Features -->
+    <fieldset>
+      <legend>Useful Features</legend>
+      <label><input type="checkbox" name="features" value="ease"> Ease of Use</label>
+      <label><input type="checkbox" name="features" value="performance"> Performance</label>
+      <label><input type="checkbox" name="features" value="design"> Design</label>
+      <label><input type="checkbox" name="features" value="support"> Customer Support</label>
+    </fieldset>
+
+    <!-- Written Review -->
+    <label for="review">Written Review</label>
+    <textarea id="review" name="review" rows="4"></textarea>
+
+    <!-- User Name -->
+    <label for="username">Your Name</label>
+    <input type="text" id="username" name="username">
+
+    <!-- Submit -->
+    <input type="submit" value="Submit Review">
+
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2026 WDD 131 | Product Review Assignment</p>
+</footer>
+
+</body>
+</html>
