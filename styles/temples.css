@@ -70,22 +70,10 @@ body.temples-page {
     display: flex;
 }
 
-.temples-page nav a {
-.temples-page nav button:hover,
-.temples-page nav button.active {
-    background-color: var(--accent-color);
-    color: #1a1a1a;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.75rem;
-    font-weight: 600;
-    font-family: var(--font-heading);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    transition: background-color 0.3s, color 0.3s;
-}
-
 .temples-page nav a:hover,
-.temples-page nav a.active {
+.temples-page nav button:hover,
+.temples-page nav a.active,
+.temples-page nav button.active {
     background-color: var(--accent-color);
     color: #1a1a1a;
 }
