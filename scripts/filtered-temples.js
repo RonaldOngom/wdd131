@@ -79,37 +79,45 @@ function displayTemples(filtered) {
     const card = document.createElement("article");
     card.classList.add("temple-card");
 
+    // try to infer image width/height from URL (e.g., 400x250)
+    let width = 400, height = 250;
+    const sizeMatch = temple.imageUrl.match(/(\d+)x(\d+)/);
+    if (sizeMatch) {
+      width = sizeMatch[1];
+      height = sizeMatch[2];
+    }
+
     card.innerHTML = `
       <h2>${temple.templeName}</h2>
       <p><strong>Location:</strong> ${temple.location}</p>
       <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
       <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-      <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy">
+      <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy" width="${width}" height="${height}">
     `;
     container.appendChild(card);
   });
 }
 
 displayTemples(temples);
+setActive('home');
 
 // Filters
-document.querySelector("#home").addEventListener("click", () => displayTemples(temples));
+const navButtons = document.querySelectorAll('nav button');
+function setActive(id) {
+  navButtons.forEach(btn => btn.classList.remove('active'));
+  const el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
 
-document.querySelector("#old").addEventListener("click", () =>
-  displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() < 1900))
-);
+document.querySelector("#home").addEventListener("click", () => { setActive('home'); displayTemples(temples); });
 
-document.querySelector("#new").addEventListener("click", () =>
-  displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() > 2000))
-);
+document.querySelector("#old").addEventListener("click", () => { setActive('old'); displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() < 1900)); });
 
-document.querySelector("#large").addEventListener("click", () =>
-  displayTemples(temples.filter(t => t.area > 90000))
-);
+document.querySelector("#new").addEventListener("click", () => { setActive('new'); displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() > 2000)); });
 
-document.querySelector("#small").addEventListener("click", () =>
-  displayTemples(temples.filter(t => t.area < 10000))
-);
+document.querySelector("#large").addEventListener("click", () => { setActive('large'); displayTemples(temples.filter(t => t.area > 90000)); });
+
+document.querySelector("#small").addEventListener("click", () => { setActive('small'); displayTemples(temples.filter(t => t.area < 10000)); });
 
 // Footer
 document.querySelector("#year").textContent = new Date().getFullYear();

@@ -53,15 +53,17 @@ body.temples-page {
 
 .temples-page #menuButton.open::before {
     content: "\2715"; /* 'X' Close icon character */
-}
-
-/* Mobile Navigation (Hidden by default, flex layout when active) */
-.temples-page nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 1rem;
+.temples-page nav a,
+.temples-page nav button {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: background-color 0.3s, color 0.3s;
+    background: none;
+    border: none;
 }
 
 .temples-page nav.open {
@@ -69,6 +71,10 @@ body.temples-page {
 }
 
 .temples-page nav a {
+.temples-page nav button:hover,
+.temples-page nav button.active {
+    background-color: var(--accent-color);
+    color: #1a1a1a;
     color: #ffffff;
     text-decoration: none;
     padding: 0.75rem;

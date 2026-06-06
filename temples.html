@@ -17,15 +17,16 @@
     <script src="scripts/temples.js" defer></script>
 </head>
 <body class="temples-page">
+    <a class="skip-link" href="#temples">Skip to content</a>
     <header>
         <h1>Temple Album</h1>
         <button id="menuButton" aria-label="Toggle Menu" aria-expanded="false"></button>
-        <nav id="navMenu">
-            <a href="#" class="active">Home</a>
-            <a href="#">Old</a>
-            <a href="#">New</a>
-            <a href="#">Large</a>
-            <a href="#">Small</a>
+        <nav id="navMenu" aria-label="Filter navigation">
+            <button class="active" id="home">Home</button>
+            <button id="old">Old</button>
+            <button id="new">New</button>
+            <button id="large">Large</button>
+            <button id="small">Small</button>
         </nav>
     </header>
 

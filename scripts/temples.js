@@ -80,12 +80,20 @@ function displayTemples(list) {
         const card = document.createElement('article');
         card.classList.add('temple-card');
 
+        // infer image dimensions from filename (e.g., 400x250) to reduce layout shift
+        let width = 400, height = 250;
+        const sizeMatch = temple.imageUrl.match(/(\d+)x(\d+)/);
+        if (sizeMatch) {
+            width = sizeMatch[1];
+            height = sizeMatch[2];
+        }
+
         card.innerHTML = `
             <h2>${temple.templeName}</h2>
             <p><strong>Location:</strong> ${temple.location}</p>
             <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
             <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-            <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy">
+            <img src="${temple.imageUrl}" alt="${temple.templeName} Temple" loading="lazy" width="${width}" height="${height}">
         `;
 
         container.appendChild(card);
