@@ -99,15 +99,17 @@ function displayTemples(filtered) {
 }
 
 displayTemples(temples);
-setActive('home');
 
 // Filters
-const navButtons = document.querySelectorAll('nav button');
+const navButtons = document.querySelectorAll('nav a, nav button');
 function setActive(id) {
   navButtons.forEach(btn => btn.classList.remove('active'));
   const el = document.getElementById(id);
   if (el) el.classList.add('active');
 }
+
+// initialize active state after navButtons exist
+setActive('home');
 
 document.querySelector("#home").addEventListener("click", () => { setActive('home'); displayTemples(temples); });
 
