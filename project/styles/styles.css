@@ -1,0 +1,409 @@
+/* =========================
+   CSS RESET & BASE STYLES
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #0a3cff;
+  --secondary: #00c6ff;
+  --dark: #0f172a;
+  --light: #f8fafc;
+  --text: #334155;
+
+  /* Brand deep blue gradient and glow accent for Kairos Waves */
+  --deep-bg-start: #020a16;
+  --deep-bg-end: #001224;
+  --glow-accent: #00d4ff;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, sans-serif;
+  line-height: 1.6;
+  /* Replicating the deep blue gradient from the brand */
+  background: radial-gradient(circle at center, var(--deep-bg-end), var(--deep-bg-start));
+  background-color: var(--deep-bg-start);
+  color: #ffffff;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+header {
+  background: rgba(2, 10, 22, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.logo span {
+    margin-left: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  color: var(--glow-accent);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+#hero {
+  position: relative;
+  text-align: center;
+}
+
+#hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.65)
+  );
+}
+
+#hero h1 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  z-index: 1;
+}
+
+.about-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.about-section img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.about-section div {
+  flex: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   SERVICES SECTION
+========================= */
+#services-container {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#services-container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
+}
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* =========================
+   SERVICE CARDS
+========================= */
+.service-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.service-card h3 {
+  margin: 1.2rem 1rem 0.5rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+.service-card p {
+  padding: 0 1.5rem 2rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* Hover Effect */
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+section {
+  padding: 2.5rem 0;
+}
+
+section + section {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+form {
+  max-width: 680px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.25rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+fieldset {
+  border: 1px solid #cbd5e1;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+}
+
+legend {
+  font-weight: 700;
+  color: var(--dark);
+  padding: 0 0.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  font: inherit;
+}
+
+input,
+textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 0.85rem;
+  padding: 1rem 1.1rem;
+  background: rgba(255,255,255,0.06);
+  color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.16);
+}
+
+textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+button {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.95rem;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  background: #0b4cd6;
+  transform: translateY(-1px);
+}
+
+.form-feedback {
+  margin-top: 1rem;
+  color: #ffffff;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 1rem 1.1rem;
+  border-radius: 0.85rem;
+}
+
+/* Ensure labels and legends are readable on dark background */
+label,
+legend {
+  color: #ffffff;
+}
+
+/* Placeholder color for inputs */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255,255,255,0.72);
+}
+
+/* Deep-blue gradient styling for contact form labels and inputs */
+#contactForm label,
+#contactForm legend {
+  /* fallback color for older browsers */
+  color: var(--deep-bg-end);
+  background: linear-gradient(90deg, var(--deep-bg-end), var(--deep-bg-start));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#contactForm input,
+#contactForm textarea {
+  /* set typed text to deep-blue for a brand look, with visible caret */
+  color: var(--deep-bg-end);
+  caret-color: var(--glow-accent);
+}
+
+/* Gradient submit button matching brand */
+#contactForm button {
+  background: linear-gradient(90deg, var(--deep-bg-end), var(--glow-accent));
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+#contactForm button:focus,
+#contactForm button:hover {
+  transform: translateY(-2px);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.85rem 1rem;
+  background: var(--primary);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  z-index: 1000;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: var(--dark);
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+footer a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   ACCESSIBILITY & FOCUS
+========================= */
+a:focus {
+  outline: 3px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+/* =========================
+   RESPONSIVE REFINEMENTS
+========================= */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
